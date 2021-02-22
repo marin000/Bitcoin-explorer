@@ -24,7 +24,7 @@ $trArray= json_decode($jsonString, true);
 $tr=json_decode($bitcoind->decoderawtransaction($trArray['result']));
 
 echo '<br><br><br><br>';
-echo '<h4>Details</h4>';
+echo '<h4>Transaction Details</h4>';
 echo '<table class="table table-striped" style="width:60%;margin-left:auto;margin-right:auto;">';
     echo '<tr><td>Hash</td><td>'.$tr->txid.'</td></tr>';
     echo '<tr><td>Size</td><td>'.$tr->size.'</td></tr>';

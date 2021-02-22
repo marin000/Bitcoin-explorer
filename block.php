@@ -10,7 +10,7 @@ if (isset($_POST['block'])) {
     if (isset($testHash)) {
         $block=json_decode($bitcoind->getBlock($_POST['block']));
     }
-    /*elseif (is_numeric($_POST['block'])) {
+    elseif (is_numeric($_POST['block'])) {
         try {
             $testHeight=$bitcoind->getblockhash(intval($_POST['block']));
         } catch (\Throwable $th) {
@@ -25,7 +25,7 @@ if (isset($_POST['block'])) {
             echo '<h4>Wrong input!<h4>';
             exit();
         }
-    }*/
+    }
     else {
         echo '<h4>Wrong input!<h4>';
         exit();
@@ -57,9 +57,9 @@ echo '<table class="table table-striped" style="width:60%;margin-left:auto;margi
     echo '<tr><td>Weight</td><td>'.$block->weight.' kWU</td></tr>';
     echo '<tr><td>Number of transactions</td><td>'.sizeof($block->tx).'</td></tr>';
     echo '<tr><td>Median time</td><td>'.$block->mediantime.'</td></tr>';
-    echo '<tr><td>Previous block hash</td><td>'.$block->previousblockhash.'</td></tr>';
+    echo '<tr><td>Previous block hash</td><td><a href="block.php?hash='.$block->previousblockhash.'">'.$block->previousblockhash.'</a></td></tr>';
     if ($block->nextblockhash){
-        echo '<tr><td>Next block hash</td><td>'.$block->nextblockhash.'</td></tr>';
+        echo '<tr><td>Next block hash</td><td><a href="block.php?hash='.$block->nextblockhash.'">'.$block->nextblockhash.'</a></td></tr>';
     }
     else {
         echo '<tr><td>Next block hash</td><td></td></tr>';

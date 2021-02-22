@@ -9,14 +9,14 @@
             Bitcoin explorer</a>
         </h1>
         <p>&nbsp;</p>
-        <form style="float: left;margin-left:10%;" method="post" action="block.php">
-        <h4 style="display: inline-block;">Search for block</h4>
-        <input type="text" name="block" required/>
+        <form style="float: left;margin-left:10%;" method="post" action="transaction.php">
+        <h4 style="display: inline-block;">Search for transaction</h4>
+        <input type="text" placeholder="transaction hash" name="transaction" required/>
         <input class="btn btn-primary" type="submit" value="Search"/>
         </form>
-        <form style="float: right;margin-right:10%;" method="post" action="transaction.php">
-        <h4 style="display: inline-block;">Search for transaction</h4>
-        <input type="text" name="transaction" required/>
+        <form style="float: right;margin-right:10%;" method="post" action="block.php">
+        <h4 style="display: inline-block;">Search for block</h4>
+        <input type="text" placeholder="block hash or height" name="block" required/>
         <input class="btn btn-primary" type="submit" value="Search"/>
         </form>
         
@@ -30,7 +30,7 @@
 <?php 
 require 'vendor/autoload.php';
 use Denpa\Bitcoin\Client as BitcoinClient;
-//ini_set('display_errors',0);
+ini_set('display_errors',0);
 
 $bitcoind = new BitcoinClient([
     'host'          => 'blockchain.oss.unist.hr',          
