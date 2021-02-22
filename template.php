@@ -33,10 +33,10 @@ use Denpa\Bitcoin\Client as BitcoinClient;
 ini_set('display_errors',0);
 
 $bitcoind = new BitcoinClient([
-    'host'          => 'blockchain.oss.unist.hr',          
+    'host'          => '*****',          
     'port'          => 8332,                  
-    'user'          => 'student',              
-    'password'      => '2B4DB3SmsM2B4DB3SmsM89QjgYFp89QjgYFp',          
+    'user'          => '****',              
+    'password'      => '*****',          
 ]);
 
 
